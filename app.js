@@ -7,6 +7,7 @@ const mongourl="mongodb://localhost:27017";
 let db;
 const cors=require('cors');
 const bodyparser=require('body-parser');
+let limit=100;
 
 /*app.use(cors);
 app.use()*/
