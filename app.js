@@ -1,9 +1,9 @@
 const express=require('express');
 const app=express();
-const port=9800;
+const port=process.env.PORT || 9800;
 const mongo=require('mongodb');
 const MongoClient=mongo.MongoClient;
-const mongourl="mongodb://localhost:27017";
+const mongourl="mongodb+srv://knyhago:kenny@cluster0.2kzve.mongodb.net/edumato?retryWrites=true&w=majority";
 let db;
 const cors=require('cors');
 const bodyparser=require('body-parser');
@@ -99,7 +99,7 @@ app.get('/cuisine',(req,res)=>{
 
 MongoClient.connect(mongourl,(err,connection)=>{
     if (err) console.log(err);
-    db=connection.db('assign5');
+    db=connection.db('edumato');
   
     app.listen(port,(err)=>{
       if (err) throw err
